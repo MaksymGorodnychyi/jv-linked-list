@@ -52,7 +52,6 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
         }
     }
 
-
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -127,7 +126,6 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
     }
 
     private T unlink(Node<T> node) {
-        T removedValue = node.value;
         Node<T> previousNode = node.prev;
         Node<T> nextNode = node.next;
         if (previousNode == null) {
@@ -140,6 +138,7 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
         } else {
             nextNode.prev = previousNode;
         }
+        T removedValue = node.value;
         size--;
         return removedValue;
     }
@@ -155,6 +154,5 @@ public class MyLinkedList<T> implements MyLinkedListInterface<T> {
             this.next = next;
         }
     }
-
 }
 
